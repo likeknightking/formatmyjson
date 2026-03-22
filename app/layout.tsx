@@ -6,7 +6,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.formatmyjson.com'),
+  metadataBase: new URL('https://formatmyjson.com'),
   title: 'JSON Formatter & Validator — Format, Validate and Beautify JSON Online',
   description:
     'Free online JSON formatter and validator. Paste your JSON to instantly format, beautify, validate, and view as a collapsible tree. Powered by Monaco Editor.',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'JSON Formatter — Free Online Tool',
     description: 'Format, validate, and beautify JSON instantly. Built with Monaco Editor.',
     type: 'website',
-    url: 'https://www.formatmyjson.com',
+    url: 'https://formatmyjson.com',
     images: ['/og-image.png'],
   },
   twitter: {
