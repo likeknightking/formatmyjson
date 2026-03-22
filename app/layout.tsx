@@ -15,13 +15,11 @@ export const metadata: Metadata = {
     description: 'Format, validate, and beautify JSON instantly. Built with Monaco Editor.',
     type: 'website',
     url: 'https://www.formatmyjson.com',
-    images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'JSON Formatter & Validator',
     description: 'Format and validate JSON online. Free, fast, no sign-up.',
-    images: ['/og-image.png'],
   },
   robots: { index: true, follow: true },
 }
