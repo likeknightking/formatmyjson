@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description: 'Format and validate JSON online. Free, fast, no sign-up.',
   },
   robots: { index: true, follow: true },
+  other: { 'google-adsense-account': 'ca-pub-7584346505499429' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
