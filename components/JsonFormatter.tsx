@@ -178,8 +178,7 @@ export default function JsonFormatter() {
         </div>
       )}
 
-      {/* Ad — below tool */}
-      <AdSlot slot="3344556677" format="horizontal" />
+      {/* Ad — below tool (single ad, user just finished formatting) */}
       <AdSlot slot="7766554433" format="rectangle" className="mx-auto" />
     </div>
   )
