@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'JSON Formatter — Free Online Tool',
     description: 'Format, validate, and beautify JSON instantly. Built with Monaco Editor.',
     type: 'website',
+    url: 'https://www.formatmyjson.com',
     images: ['/og-image.png'],
   },
   twitter: {
