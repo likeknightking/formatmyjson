@@ -14,7 +14,7 @@
 - No registration required
 
 ## URL
-https://formatmyjson.com
+https://www.formatmyjson.com
 
 ## Usage
 Paste raw JSON into the input editor. Click Format to beautify, Minify to compress, or switch to Tree view to explore the structure. All processing happens in your browser.
