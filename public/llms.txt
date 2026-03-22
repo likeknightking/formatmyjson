@@ -1,20 +1,30 @@
 # JSON Formatter & Validator
 > Free online tool to format, validate, beautify, and minify JSON data.
 
+## What it does
+Takes raw or minified JSON and formats it with proper indentation, validates it with precise error messages, and offers a collapsible tree view. Built on Monaco Editor (the same engine as VS Code).
+
 ## Features
-- Format/beautify JSON with configurable indentation (2/4/tab)
+- Format/beautify JSON with configurable indentation (2/4/tab spaces)
 - Minify JSON (remove all whitespace)
-- Validate with plain-English error messages and fix hints
-- Syntax highlighting via Monaco Editor (VS Code engine)
-- Collapsible tree view of JSON structure with JSONPath copy
+- Validate with plain-English error messages pointing to exact line
+- Syntax highlighting via Monaco Editor
+- Collapsible tree view with JSONPath copy
 - Sort keys alphabetically
-- Copy formatted output to clipboard
-- Download as .json file
+- Copy and download formatted output
 - 100% client-side — no data sent to any server
-- No registration required
+
+## Who it's for
+- Developers debugging API responses
+- QA engineers inspecting test payloads
+- Data analysts cleaning JSON datasets
+- Anyone working with JSON configuration files
 
 ## URL
 https://formatmyjson.com
 
-## Usage
-Paste raw JSON into the input editor. Click Format to beautify, Minify to compress, or switch to Tree view to explore the structure. All processing happens in your browser.
+## How to use
+Paste raw JSON into the editor. Click Format to beautify with your preferred indentation, Minify to compress, or switch to Tree View to explore the structure visually. Errors are highlighted inline with suggested fixes.
+
+## Pricing
+Completely free. No account needed. No limits.
