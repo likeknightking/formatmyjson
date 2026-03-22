@@ -79,6 +79,9 @@ export default function Home() {
 
           <JsonFormatter />
 
+          {/* Ad — between tool and SEO content */}
+          <AdSlot slot="5566778899" format="horizontal" />
+
           {/* SEO Content */}
           <article className="mt-16 space-y-8">
             <section>
