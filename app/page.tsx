@@ -1,4 +1,5 @@
 import JsonFormatter from '@/components/JsonFormatter'
+import ToolNav from '@/components/ToolNav'
 import AdSlot from '@/components/AdSlot'
 
 const jsonLd = {
@@ -71,7 +72,8 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="max-w-5xl mx-auto px-4 py-8">
+        <main className="max-w-6xl mx-auto px-4 py-8">
+          <ToolNav />
           <div className="mb-6 text-center">
             <h2 className="text-3xl font-bold text-white mb-2">JSON Formatter & Validator</h2>
             <p className="text-zinc-400">Format, validate, minify, and explore JSON. 100% client-side — your data never leaves the browser.</p>
