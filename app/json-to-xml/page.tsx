@@ -36,20 +36,20 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="min-h-screen bg-zinc-950">
         <header className="border-b border-zinc-800 px-4 py-4">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-lg font-bold text-zinc-100">🔧 FormatMyJSON — Developer Tools</h1>
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-lg font-bold text-white">{'{ }'} JSON Formatter</h1>
           </div>
         </header>
         <main className="max-w-6xl mx-auto px-4 py-8">
           <ToolNav />
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-zinc-100 mb-2">JSON to XML Converter</h2>
+          <div className="mb-6 text-center">
+            <h2 className="text-3xl font-bold text-white mb-2">JSON to XML Converter</h2>
             <p className="text-zinc-400 text-sm">Paste JSON and convert it to well-formatted XML instantly.</p>
           </div>
           <Client />
-          <article className="mt-16 space-y-8 max-w-3xl mx-auto">
+          <article className="mt-16 space-y-8">
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">How JSON to XML Conversion Works</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">How JSON to XML Conversion Works</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 JSON (JavaScript Object Notation) and XML (eXtensible Markup Language) are the two most widely used formats for structured data exchange. While JSON has become the dominant format for modern REST APIs and web applications, XML remains essential in enterprise systems, SOAP services, RSS feeds, and many government and financial data standards.
               </p>
@@ -59,7 +59,7 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">When You Need JSON to XML Conversion</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">When You Need JSON to XML Conversion</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 There are many real-world scenarios where converting JSON to XML is necessary. If you are integrating a modern REST API with a legacy SOAP service, you will need to transform the JSON responses into XML request bodies. Many enterprise middleware platforms, such as MuleSoft, IBM Integration Bus, and Oracle SOA Suite, expect XML payloads even when upstream services produce JSON.
               </p>
@@ -71,7 +71,7 @@ export default function Page() {
             <AdSlot slot="7788990011" format="article" />
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">Understanding the Data Model Differences</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">Understanding the Data Model Differences</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 JSON and XML have fundamentally different data models, and understanding these differences helps you produce better conversions. JSON has a small set of data types: strings, numbers, booleans, null, arrays, and objects. XML, on the other hand, treats everything as text by default and uses schemas (XSD) to impose type constraints. This means that JSON numbers like 42 or 3.14 become text content in XML unless a schema is applied.
               </p>
@@ -81,7 +81,7 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">Best Practices for JSON to XML Conversion</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">Best Practices for JSON to XML Conversion</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 Start by validating your JSON input before converting. Malformed JSON will produce unexpected results or errors. Use descriptive, consistent key names in your JSON because these become your XML element names. Avoid keys with spaces or special characters, as they may need to be sanitized to produce valid XML tag names.
               </p>
@@ -91,16 +91,22 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">Frequently Asked Questions</h2>
-              {faqs.map(faq => (
-                <div key={faq.q} className="mb-4">
-                  <h3 className="text-base font-semibold text-zinc-200">{faq.q}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mt-1">{faq.a}</p>
-                </div>
-              ))}
+              <h2 className="text-2xl font-bold text-white mb-3">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {faqs.map(faq => (
+                  <div key={faq.q}>
+                    <h3 className="text-lg font-semibold text-zinc-200">{faq.q}</h3>
+                    <p className="text-zinc-400 leading-relaxed mt-1">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
             </section>
           </article>
         </main>
+
+        <footer className="border-t border-zinc-800 mt-16 py-8 text-center">
+          <p className="text-zinc-600 text-sm">FormatMyJSON — Free developer tools. No sign-up required.</p>
+        </footer>
       </div>
     </>
   )

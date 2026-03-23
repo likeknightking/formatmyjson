@@ -36,20 +36,20 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="min-h-screen bg-zinc-950">
         <header className="border-b border-zinc-800 px-4 py-4">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-lg font-bold text-zinc-100">🔧 FormatMyJSON — Developer Tools</h1>
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-lg font-bold text-white">{'{ }'} JSON Formatter</h1>
           </div>
         </header>
         <main className="max-w-6xl mx-auto px-4 py-8">
           <ToolNav />
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-zinc-100 mb-2">JSON to YAML Converter</h2>
+          <div className="mb-6 text-center">
+            <h2 className="text-3xl font-bold text-white mb-2">JSON to YAML Converter</h2>
             <p className="text-zinc-400 text-sm">Convert JSON to YAML for Kubernetes, Docker Compose, CI/CD configs, and more.</p>
           </div>
           <Client />
-          <article className="mt-16 space-y-8 max-w-3xl mx-auto">
+          <article className="mt-16 space-y-8">
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">When to Use YAML Instead of JSON</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">When to Use YAML Instead of JSON</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 YAML (YAML Ain't Markup Language) has become the standard configuration format for the modern DevOps ecosystem. Kubernetes manifests, Docker Compose files, GitHub Actions workflows, GitLab CI pipelines, Ansible playbooks, and Helm charts all use YAML. If you work in cloud infrastructure, containers, or CI/CD, you encounter YAML daily.
               </p>
@@ -59,7 +59,7 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">How the JSON to YAML Conversion Works</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">How the JSON to YAML Conversion Works</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 The converter parses your JSON input into a JavaScript object, then serializes it into YAML format. JSON objects become YAML mappings (key-value pairs separated by colons), arrays become YAML sequences (items prefixed with dashes), and primitive values (strings, numbers, booleans, null) are output with appropriate YAML syntax.
               </p>
@@ -71,7 +71,7 @@ export default function Page() {
             <AdSlot slot="7788990011" format="article" />
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">Common Use Cases for JSON to YAML</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">Common Use Cases for JSON to YAML</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 One of the most common workflows is generating Kubernetes resource definitions. Many teams maintain their resource configurations as JSON (because it is easier to generate programmatically) and then convert to YAML for deployment. This tool lets you quickly verify that a programmatically generated JSON config produces the expected YAML structure before applying it to a cluster.
               </p>
@@ -84,7 +84,7 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">YAML Pitfalls to Watch For</h2>
+              <h2 className="text-2xl font-bold text-white mb-3">YAML Pitfalls to Watch For</h2>
               <p className="text-zinc-400 leading-relaxed mb-3">
                 While YAML is powerful, it has some well-known gotchas. The "Norway problem" is a classic example: the string "NO" (the country code for Norway) is interpreted as a boolean false by some YAML parsers. Similarly, version numbers like "1.0" may be parsed as floats rather than strings. This converter handles these cases by quoting ambiguous values, but you should always test your YAML with the target tool's parser.
               </p>
@@ -94,16 +94,22 @@ export default function Page() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold text-zinc-100 mb-3">Frequently Asked Questions</h2>
-              {faqs.map(faq => (
-                <div key={faq.q} className="mb-4">
-                  <h3 className="text-base font-semibold text-zinc-200">{faq.q}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mt-1">{faq.a}</p>
-                </div>
-              ))}
+              <h2 className="text-2xl font-bold text-white mb-3">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {faqs.map(faq => (
+                  <div key={faq.q}>
+                    <h3 className="text-lg font-semibold text-zinc-200">{faq.q}</h3>
+                    <p className="text-zinc-400 leading-relaxed mt-1">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
             </section>
           </article>
         </main>
+
+        <footer className="border-t border-zinc-800 mt-16 py-8 text-center">
+          <p className="text-zinc-600 text-sm">FormatMyJSON — Free developer tools. No sign-up required.</p>
+        </footer>
       </div>
     </>
   )
