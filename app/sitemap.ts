@@ -11,5 +11,8 @@ export default function sitemap() {
     { url: `${base}/json-to-csv`,     lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${base}/base64-encode`,   lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${base}/base64-decode`,   lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${base}/privacy-policy`,  lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${base}/terms`,           lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${base}/about`,           lastModified: now, changeFrequency: 'yearly' as const, priority: 0.4 },
   ]
 }

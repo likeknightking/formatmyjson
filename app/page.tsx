@@ -1,6 +1,7 @@
 import JsonFormatter from '@/components/JsonFormatter'
 import ToolNav from '@/components/ToolNav'
 import AdSlot from '@/components/AdSlot'
+import Footer from '@/components/Footer'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -52,6 +53,10 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white mb-2">JSON Formatter & Validator</h2>
             <p className="text-zinc-400">Format, validate, minify, and explore JSON. 100% client-side — your data never leaves the browser.</p>
           </div>
+
+          <p className="text-zinc-400 leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+            Working with raw or minified JSON can be tedious and error-prone. This tool instantly formats, validates, and beautifies your JSON with proper indentation, highlights syntax errors with precise line numbers, and offers a collapsible tree view for exploring deeply nested structures. Paste your JSON below and click Format to get started.
+          </p>
 
           <JsonFormatter />
 
@@ -137,9 +142,7 @@ export default function Home() {
           </article>
         </main>
 
-        <footer className="border-t border-zinc-800 mt-16 py-8 text-center">
-          <p className="text-zinc-600 text-sm">FormatMyJSON — Free developer tools. No sign-up required.</p>
-        </footer>
+        <Footer />
       </div>
     </>
   )
