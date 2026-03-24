@@ -31,7 +31,7 @@ export default function SubToolPage({ title, subtitle, children, seoContent, faq
             <h2 className="text-xl font-bold text-zinc-100 mb-2">{seoContent.heading}</h2>
             <p className="text-zinc-400 leading-relaxed">{seoContent.text}</p>
           </section>
-          <AdSlot slot="7788990011" format="article" />
+          <AdSlot slot="8036801172" format="article" />
           {faqs.length > 0 && (
             <section>
               <h2 className="text-xl font-bold text-zinc-100 mb-3">FAQ</h2>

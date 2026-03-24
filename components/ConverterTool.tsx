@@ -132,7 +132,7 @@ export default function ConverterTool({
       </div>
 
       {/* Ad after tool */}
-      <AdSlot slot="5566778899" format="horizontal" />
+      <AdSlot slot="7757599577" format="horizontal" />
     </div>
   )
 }

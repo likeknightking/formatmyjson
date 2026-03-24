@@ -69,7 +69,7 @@ export default function XmlFormatterPage() {
               </p>
             </section>
 
-            <AdSlot slot="7788990011" format="article" />
+            <AdSlot slot="8036801172" format="article" />
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-3">How This XML Formatter Works</h2>

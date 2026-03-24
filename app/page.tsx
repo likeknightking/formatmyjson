@@ -61,7 +61,7 @@ export default function Home() {
           <JsonFormatter />
 
           {/* Ad — between tool and SEO content */}
-          <AdSlot slot="5566778899" format="horizontal" />
+          <AdSlot slot="7757599577" format="horizontal" />
 
           {/* SEO Content */}
           <article className="mt-16 space-y-8">
@@ -113,7 +113,7 @@ export default function Home() {
             </section>
 
             {/* In-article ad */}
-            <AdSlot slot="9988776655" format="article" />
+            <AdSlot slot="8036801172" format="article" />
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-3">JSON Formatting Best Practices</h2>

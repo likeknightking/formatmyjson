@@ -72,7 +72,7 @@ export default function Page() {
               </p>
             </section>
 
-            <AdSlot slot="7788990011" format="article" />
+            <AdSlot slot="8036801172" format="article" />
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-3">Decoding Base64 in Different Contexts</h2>
