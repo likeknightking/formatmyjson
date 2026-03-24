@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import type { Metadata } from 'next'
 import ToolNav from '@/components/ToolNav'
 import Client from './Client'
@@ -103,6 +104,7 @@ export default function Page() {
             </section>
           </article>
         </main>
+        <Footer />
 
         <footer className="border-t border-zinc-800 mt-16 py-8 text-center">
           <p className="text-zinc-600 text-sm">FormatMyJSON — Free developer tools. No sign-up required.</p>
