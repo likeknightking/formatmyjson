@@ -82,7 +82,9 @@ function objectToXml(obj: unknown, tagName: string, indent: number = 0): string 
   }
 
   const children = entries.map(([key, val]) => {
-    const safeName = key.replace(/[^a-zA-Z0-9_-]/g, '_')
+    let safeName = key.replace(/[^a-zA-Z0-9_-]/g, '_')
+    // XML element names cannot start with a digit
+    if (/^[0-9]/.test(safeName)) safeName = '_' + safeName
     return objectToXml(val, safeName, indent + 1)
   }).join('\n')
 
@@ -157,18 +159,36 @@ export function jsonToYaml(json: string): string {
   return toYaml(obj, 0)
 }
 
+// Strings that look like YAML 1.1 booleans/null, numbers, or contain special chars
+// must be quoted to prevent the "Norway problem" and similar type-coercion bugs.
+function formatYamlString(value: string): string {
+  const needsQuoting =
+    value === '' ||
+    /^(true|false|null|yes|no|on|off|y|n|~)$/i.test(value) ||
+    /^-?\d+(\.\d+)?$/.test(value) ||
+    /^0\d+/.test(value) ||
+    /[:#\[\]{},&*!|>'"%@`]/.test(value) ||
+    /^[\s]|[\s]$/.test(value) ||
+    value.includes('\n')
+
+  if (needsQuoting) {
+    return `"${value
+      .replace(/\\/g, '\\\\')
+      .replace(/"/g, '\\"')
+      .replace(/\n/g, '\\n')
+      .replace(/\t/g, '\\t')
+      .replace(/\r/g, '\\r')}"`
+  }
+  return value
+}
+
 function toYaml(value: unknown, indent: number): string {
   const pad = '  '.repeat(indent)
 
   if (value === null || value === undefined) return 'null'
   if (typeof value === 'boolean') return String(value)
   if (typeof value === 'number') return String(value)
-  if (typeof value === 'string') {
-    if (value.includes('\n') || value.includes(':') || value.includes('#') || value.includes('"') || value.includes("'") || value === '') {
-      return `"${value.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`
-    }
-    return value
-  }
+  if (typeof value === 'string') return formatYamlString(value)
 
   if (Array.isArray(value)) {
     if (value.length === 0) return '[]'
@@ -199,6 +219,39 @@ function toYaml(value: unknown, indent: number): string {
 
 // === JSON → CSV ===
 
+// Recursively flatten an object/array into dot-notation paths so that
+// nested structures map cleanly onto a flat CSV row.
+function flattenForCsv(value: unknown, prefix: string, target: Record<string, unknown>): void {
+  if (value === null || value === undefined) {
+    target[prefix] = ''
+    return
+  }
+  if (Array.isArray(value)) {
+    if (value.length === 0) {
+      target[prefix] = ''
+      return
+    }
+    value.forEach((item, i) => {
+      const key = prefix ? `${prefix}.${i}` : String(i)
+      flattenForCsv(item, key, target)
+    })
+    return
+  }
+  if (typeof value === 'object') {
+    const entries = Object.entries(value as Record<string, unknown>)
+    if (entries.length === 0) {
+      target[prefix] = ''
+      return
+    }
+    for (const [k, v] of entries) {
+      const key = prefix ? `${prefix}.${k}` : k
+      flattenForCsv(v, key, target)
+    }
+    return
+  }
+  target[prefix] = value
+}
+
 export function jsonToCsv(json: string): string {
   const data = JSON.parse(json)
 
@@ -208,10 +261,26 @@ export function jsonToCsv(json: string): string {
 
   if (data.length === 0) return ''
 
-  // Collect all unique keys
-  const keys = [...new Set(data.flatMap(item =>
-    typeof item === 'object' && item !== null ? Object.keys(item) : []
-  ))]
+  // Flatten each row into dot-notation key/value pairs.
+  const flatRows: Record<string, unknown>[] = data.map(item => {
+    const flat: Record<string, unknown> = {}
+    if (typeof item === 'object' && item !== null) {
+      flattenForCsv(item, '', flat)
+    }
+    return flat
+  })
+
+  // Use the union of all keys across all rows, preserving first-seen order.
+  const keys: string[] = []
+  const seen = new Set<string>()
+  for (const row of flatRows) {
+    for (const k of Object.keys(row)) {
+      if (!seen.has(k)) {
+        seen.add(k)
+        keys.push(k)
+      }
+    }
+  }
 
   if (keys.length === 0) {
     throw new Error('No object keys found in the array')
@@ -226,10 +295,9 @@ export function jsonToCsv(json: string): string {
   }
 
   const header = keys.map(escapeCsv).join(',')
-  const rows = data.map(item => {
-    if (typeof item !== 'object' || item === null) return keys.map(() => '').join(',')
-    return keys.map(key => escapeCsv((item as Record<string, unknown>)[key])).join(',')
-  })
+  const rows = flatRows.map(row =>
+    keys.map(key => escapeCsv(row[key])).join(',')
+  )
 
   return [header, ...rows].join('\n')
 }

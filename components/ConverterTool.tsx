@@ -108,6 +108,7 @@ export default function ConverterTool({
             <span className="text-[10px] text-zinc-600">{input.length} chars</span>
           </div>
           <textarea
+            aria-label={inputLabel}
             className="flex-1 min-h-[400px] bg-transparent p-4 font-mono text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none resize-none"
             placeholder={inputPlaceholder}
             value={input}
@@ -123,6 +124,7 @@ export default function ConverterTool({
             <span className="text-[10px] text-zinc-600">{output.length} chars</span>
           </div>
           <textarea
+            aria-label={outputLabel}
             className="flex-1 min-h-[400px] bg-transparent p-4 font-mono text-sm text-zinc-300 placeholder-zinc-600 focus:outline-none resize-none"
             placeholder="Result will appear here..."
             value={output}

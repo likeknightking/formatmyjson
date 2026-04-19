@@ -43,14 +43,14 @@ export default function Home() {
       <div className="min-h-screen bg-zinc-950">
         <header className="border-b border-zinc-800 px-4 py-4">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-lg font-bold text-white">{'{ }'} JSON Formatter</h1>
+            <div className="text-lg font-bold text-white">{'{ }'} JSON Formatter</div>
           </div>
         </header>
 
         <main className="max-w-6xl mx-auto px-4 py-8">
           <ToolNav />
           <div className="mb-6 text-center">
-            <h2 className="text-3xl font-bold text-white mb-2">JSON Formatter & Validator</h2>
+            <h1 className="text-3xl font-bold text-white mb-2">JSON Formatter & Validator</h1>
             <p className="text-zinc-400">Format, validate, minify, and explore JSON. 100% client-side — your data never leaves the browser.</p>
           </div>
 

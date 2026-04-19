@@ -38,13 +38,13 @@ export default function Page() {
       <div className="min-h-screen bg-zinc-950">
         <header className="border-b border-zinc-800 px-4 py-4">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-lg font-bold text-white">{'{ }'} JSON Formatter</h1>
+            <div className="text-lg font-bold text-white">{'{ }'} JSON Formatter</div>
           </div>
         </header>
         <main className="max-w-6xl mx-auto px-4 py-8">
           <ToolNav />
           <div className="mb-6 text-center">
-            <h2 className="text-3xl font-bold text-white mb-2">JSON to XML Converter</h2>
+            <h1 className="text-3xl font-bold text-white mb-2">JSON to XML Converter</h1>
             <p className="text-zinc-400 text-sm">Paste JSON and convert it to well-formatted XML instantly.</p>
           </div>
           <Client />
@@ -105,10 +105,6 @@ export default function Page() {
           </article>
         </main>
         <Footer />
-
-        <footer className="border-t border-zinc-800 mt-16 py-8 text-center">
-          <p className="text-zinc-600 text-sm">FormatMyJSON — Free developer tools. No sign-up required.</p>
-        </footer>
       </div>
     </>
   )
