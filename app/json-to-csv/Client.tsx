@@ -12,6 +12,7 @@ export default function Client() {
       convert={jsonToCsv}
       inputLang="json"
       outputLang="csv"
+      toolName="json_to_csv"
     />
   )
 }

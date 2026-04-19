@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import { Copy, Check, Download, ArrowRight, Trash2 } from 'lucide-react'
+import { trackToolUsed } from '@/lib/track'
 import AdSlot from './AdSlot'
 
 interface Props {
@@ -12,10 +13,11 @@ interface Props {
   convert: (input: string) => string
   inputLang?: string
   outputLang?: string
+  toolName?: string
 }
 
 export default function ConverterTool({
-  title, inputLabel, outputLabel, inputPlaceholder, convert, inputLang, outputLang,
+  title, inputLabel, outputLabel, inputPlaceholder, convert, inputLang, outputLang, toolName,
 }: Props) {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
@@ -23,6 +25,7 @@ export default function ConverterTool({
   const [copied, setCopied] = useState(false)
 
   const handleConvert = useCallback(() => {
+    if (toolName) trackToolUsed(toolName)
     if (!input.trim()) {
       setError('Please enter some content to convert.')
       setOutput('')
@@ -36,7 +39,7 @@ export default function ConverterTool({
       setError(e instanceof Error ? e.message : 'Conversion failed')
       setOutput('')
     }
-  }, [input, convert])
+  }, [input, convert, toolName])
 
   const handleCopy = useCallback(async () => {
     if (!output) return

@@ -7,6 +7,7 @@ import {
   validateJSON, formatJSON, minifyJSON, buildTree,
   FormatOptions, ValidationResult,
 } from '@/lib/json-engine'
+import { trackToolUsed } from '@/lib/track'
 import Toolbar from './Toolbar'
 import ErrorBanner from './ErrorBanner'
 import TreeView from './TreeView'
@@ -48,6 +49,7 @@ export default function JsonFormatter() {
   }, [])
 
   function handleFormat() {
+    trackToolUsed('json_format')
     const result = validateJSON(input)
     setValidation(result)
     if (!result.valid) return

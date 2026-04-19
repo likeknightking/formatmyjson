@@ -12,6 +12,7 @@ export default function Client() {
       convert={base64Encode}
       inputLang="text"
       outputLang="text"
+      toolName="base64_encode"
     />
   )
 }

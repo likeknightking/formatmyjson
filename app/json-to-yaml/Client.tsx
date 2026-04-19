@@ -12,6 +12,7 @@ export default function Client() {
       convert={jsonToYaml}
       inputLang="json"
       outputLang="yaml"
+      toolName="json_to_yaml"
     />
   )
 }

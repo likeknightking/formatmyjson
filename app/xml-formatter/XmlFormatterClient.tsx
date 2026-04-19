@@ -3,6 +3,7 @@
 import { useState, useCallback } from 'react'
 import { Copy, Check, Download, Trash2, Minimize2, Sparkles } from 'lucide-react'
 import { formatXML, minifyXML, validateXML } from '@/lib/converters'
+import { trackToolUsed } from '@/lib/track'
 import AdSlot from '@/components/AdSlot'
 
 const SAMPLE = `<?xml version="1.0" encoding="UTF-8"?><catalog><book id="1"><title>XML Developer Guide</title><author>John Doe</author><price>44.95</price></book><book id="2"><title>Midnight Rain</title><author>Jane Smith</author><price>5.95</price></book></catalog>`
@@ -14,6 +15,7 @@ export default function XmlFormatterClient() {
   const [copied, setCopied] = useState(false)
 
   const handleFormat = useCallback(() => {
+    trackToolUsed('xml_format')
     if (!input.trim()) { setError('Please enter some XML.'); return }
     const validation = validateXML(input)
     if (!validation.valid) { setError(validation.error || 'Invalid XML'); setOutput(''); return }

@@ -12,6 +12,7 @@ export default function Client() {
       convert={jsonToXml}
       inputLang="json"
       outputLang="xml"
+      toolName="json_to_xml"
     />
   )
 }
