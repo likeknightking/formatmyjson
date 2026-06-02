@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-800 mt-16 py-10">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-sm font-semibold text-zinc-200 mb-3">Tools</h3>
             <ul className="space-y-2 text-sm">
@@ -16,6 +16,13 @@ export default function Footer() {
               <li><Link href="/json-to-csv" className="text-zinc-500 hover:text-zinc-300">JSON to CSV</Link></li>
               <li><Link href="/base64-encode" className="text-zinc-500 hover:text-zinc-300">Base64 Encode</Link></li>
               <li><Link href="/base64-decode" className="text-zinc-500 hover:text-zinc-300">Base64 Decode</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-zinc-200 mb-3">Learn</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/blog" className="text-zinc-500 hover:text-zinc-300">Guides</Link></li>
+              <li><Link href="/editorial-standards" className="text-zinc-500 hover:text-zinc-300">Editorial Standards</Link></li>
             </ul>
           </div>
           <div>

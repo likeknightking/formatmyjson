@@ -12,6 +12,7 @@ const TOOLS = [
   { href: '/json-to-csv',    label: 'JSON → CSV' },
   { href: '/base64-encode',  label: 'Base64 Encode' },
   { href: '/base64-decode',  label: 'Base64 Decode' },
+  { href: '/blog',           label: 'Guides' },
 ]
 
 export default function ToolNav() {
