@@ -38,14 +38,15 @@ export default function About() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-zinc-200 mt-8 mb-3">Our Other Free Tools</h2>
-            <p>FormatMyJSON.com is part of a suite of free online tools built with the same philosophy of simplicity, privacy, and speed:</p>
+            <h2 className="text-xl font-semibold text-zinc-200 mt-8 mb-3">Learn With Our Guides</h2>
+            <p>Beyond the tools, we publish clear, practical guides to help you understand JSON and structured data:</p>
             <ul className="mt-3 space-y-2 list-disc list-inside">
-              <li><a href="https://loancalcemi.com" className="text-cyan-400 hover:underline">LoanCalcEMI.com</a> — EMI calculator with amortization schedules for all loan types</li>
-              <li><a href="https://calcinterest.com" className="text-cyan-400 hover:underline">CalcInterest.com</a> — Compound interest calculator with growth charts and inflation adjustment</li>
-              <li><a href="https://passwordmake.com" className="text-cyan-400 hover:underline">PasswordMake.com</a> — Secure password and passphrase generator using the Web Crypto API</li>
-              <li><a href="https://freeinvoicegen.app" className="text-cyan-400 hover:underline">FreeInvoiceGen.app</a> — Professional invoice and receipt generator with PDF export</li>
+              <li><Link href="/blog/what-is-json" className="text-cyan-400 hover:underline">What Is JSON?</Link> — a plain-English guide to JavaScript Object Notation</li>
+              <li><Link href="/blog/json-syntax-rules" className="text-cyan-400 hover:underline">JSON Syntax Rules</Link> — objects, arrays, keys, and values explained</li>
+              <li><Link href="/blog/json-vs-xml-vs-yaml" className="text-cyan-400 hover:underline">JSON vs XML vs YAML</Link> — which data format you should use</li>
+              <li><Link href="/blog/what-is-json-schema" className="text-cyan-400 hover:underline">What Is JSON Schema?</Link> — validating JSON structure the right way</li>
             </ul>
+            <p className="mt-3">Browse all of our <Link href="/blog" className="text-cyan-400 hover:underline">developer guides</Link>.</p>
           </section>
 
           <section>

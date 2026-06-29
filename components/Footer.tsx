@@ -34,12 +34,12 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-zinc-200 mb-3">More Tools</h3>
+            <h3 className="text-sm font-semibold text-zinc-200 mb-3">Popular Guides</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="https://loancalcemi.com" className="text-zinc-500 hover:text-zinc-300">EMI Calculator</a></li>
-              <li><a href="https://calcinterest.com" className="text-zinc-500 hover:text-zinc-300">Compound Interest Calculator</a></li>
-              <li><a href="https://passwordmake.com" className="text-zinc-500 hover:text-zinc-300">Password Generator</a></li>
-              <li><a href="https://freeinvoicegen.app" className="text-zinc-500 hover:text-zinc-300">Invoice Generator</a></li>
+              <li><Link href="/blog/what-is-json" className="text-zinc-500 hover:text-zinc-300">What Is JSON?</Link></li>
+              <li><Link href="/blog/json-vs-xml-vs-yaml" className="text-zinc-500 hover:text-zinc-300">JSON vs XML vs YAML</Link></li>
+              <li><Link href="/blog/fix-unexpected-token-json-parse-errors" className="text-zinc-500 hover:text-zinc-300">Fix JSON Parse Errors</Link></li>
+              <li><Link href="/blog/minify-vs-prettify-json" className="text-zinc-500 hover:text-zinc-300">Minify vs Prettify JSON</Link></li>
             </ul>
           </div>
         </div>
